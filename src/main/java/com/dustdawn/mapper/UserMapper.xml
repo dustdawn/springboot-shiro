@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dustdawn.mapper.UserMapper">
+    <select id="findByName" parameterType="string" resultType="user">
+        SELECT ID,
+          NAME,
+          PASSWORD
+          FROM
+          SYS_USER WHERE NAME = #{VALUE}
+
+    </select>
+
+    <select id="findById" parameterType="int" resultType="user">
+        SELECT ID,
+        NAME,
+        PASSWORD,
+        PERMS
+        FROM
+        SYS_USER WHERE ID = #{VALUE}
+    </select>
+</mapper>
